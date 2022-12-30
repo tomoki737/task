@@ -6,6 +6,7 @@ use App\Models\Article;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Support\Facades\Auth;
 use Tests\TestCase;
 
 class ArticleControllerTest extends TestCase
@@ -18,9 +19,9 @@ class ArticleControllerTest extends TestCase
         $this->user = User::factory()->create();
     }
 
-    public function test_store()
+    public function test_store_success()
     {
-        $response = $this->actingAs($this->user)->post('/articles/store', [
+        $response = $this->actingAs($this->user)->post('/articles', [
             'body' => "apple",
         ]);
 
@@ -30,15 +31,9 @@ class ArticleControllerTest extends TestCase
     public function test_index()
     {
         $article = Article::factory()->create();
-        $response = $this->get('/articles');
+        $response = $this->get('/');
+
 
         $response->assertStatus(200);
-
-        // $response->assertJson([
-        //     'articles' =>
-        //     [
-        //         'body' => $article->body
-        //     ]
-        // ]);
     }
 }
