@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class ArticleController extends Controller
 {
     public function index() {
-        return view('articles.index');
+        $articles = Article::all();
+        return view('articles.index', ['articles' => $articles]);
     }
 
     public function create() {
@@ -17,6 +18,7 @@ class ArticleController extends Controller
 
     public function store(Request $request, Article $article) {
         $article->fill($request->all());
+        $article->save();
         return view('articles.index');
     }
 }
