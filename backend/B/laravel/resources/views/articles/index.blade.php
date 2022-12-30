@@ -3,12 +3,15 @@
 @section('title', '一覧画面')
 
 @section('content')
+@include('nav')
 <div class="container" style="max-width: 800px;">
-<a class="btn btn-primary" href="{{ route('articles.create') }}" role="button">Link</a>
-    <div class="mt-5 h2">一覧が表示されます</div>
+    <div class="mt-5 h2">投稿一覧</div>
     @foreach($articles as $article)
-    <p>{{$article->body}}</p>
+    <div class="card mb-2">
+        <div class="card-body">
+            {{$article->body}}
+        </div>
+    </div>
     @endforeach
-    <p></p>
 </div>
 @endsection

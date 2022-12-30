@@ -3,6 +3,8 @@
 @section('title', '作成画面')
 
 @section('content')
+@include('nav')
+
 <div class="container" style="max-width: 800px;">
     <div class="mt-5 h2">作成</div>
     <form method="POST" action="{{ route('articles.store')}}">

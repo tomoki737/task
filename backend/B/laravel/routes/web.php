@@ -9,10 +9,6 @@ Route::prefix('articles')->name('articles.')->group(function() {
     Route::post('/store', [ArticleController::class, 'store'])->name('store');
 });
 
-Route::get('/create', function () {
-    return view('crea');
-});
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
