@@ -19,6 +19,7 @@ class ItemController extends Controller
     public function store(Request $request, Item $item)
     {
         $item->fill($request->all());
+        $item->save();
         return ["message" => "success"];
     }
 }
