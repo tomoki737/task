@@ -12,7 +12,9 @@ export default new Vuex.Store({
     moveLeftCardFruit(state) {
       const leftCardFruits = state.leftCardFruits;
       const addFruit = leftCardFruits[leftCardFruits.length -1];
-
+      if(!addFruit) {
+        return
+      }
       state.leftCardFruits.pop();
       state.rightCardFruits.push(addFruit);
     },
@@ -21,6 +23,10 @@ export default new Vuex.Store({
       const rightCardFruits = state.rightCardFruits;
       const addFruit = rightCardFruits[rightCardFruits.length -1];
 
+      if(!addFruit) {
+        return
+      }
+      
       state.rightCardFruits.pop();
       state.leftCardFruits.push(addFruit);
     },

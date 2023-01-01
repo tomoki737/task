@@ -1,16 +1,16 @@
 <template>
   <v-app>
     <v-main>
-      <InputPage/>
+      <InputPage />
     </v-main>
   </v-app>
 </template>
 
 <script>
-import InputPage from './InputPage';
+import InputPage from "./InputPage";
 
 export default {
-  name: 'App',
+  name: "App",
 
   components: {
     InputPage,

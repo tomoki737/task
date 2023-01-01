@@ -7,10 +7,10 @@
   </v-container>
 </template>
 <script>
-import LeftCard from './components/LeftCardComponent.vue'
-import RightCard from './components/RightCardComponent.vue'
+import LeftCard from "./components/LeftCardComponent.vue";
+import RightCard from "./components/RightCardComponent.vue";
 export default {
-  components: {LeftCard,RightCard},
+  components: { LeftCard, RightCard },
   methods: {},
 };
 </script>
